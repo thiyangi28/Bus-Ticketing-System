@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('buses', function (Blueprint $table) {
+        Schema::create('routes', function (Blueprint $table) {
             $table->id();
-            $table->string('bus_number')->unique();
-            $table->string('model')->nullable();
-            $table->integer('capacity'); // Number of seats
-            $table->enum('type', ['AC', 'Non-AC', 'Luxury'])->default('Non-AC');
-            $table->boolean('status')->default(true); // Active or Maintenance
+            $table->string('route_number')->unique();
+            $table->string('start_point');
+            $table->string('end_point');
+            $table->integer('distance') ->nullable(); 
+            $table->text('duration')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('buses');
+        Schema::dropIfExists('routes');
     }
 };
