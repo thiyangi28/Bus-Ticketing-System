@@ -21,8 +21,8 @@ class BusController extends Controller
         return view('buses.create');
     }
 
-    //save to db
-    public function store(Bus $bus)
+    // save to db
+    public function store(Request $request)
     {
         $request->validate([
             'bus_number' => 'required|unique:buses',
