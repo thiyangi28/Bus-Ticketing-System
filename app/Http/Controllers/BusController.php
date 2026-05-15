@@ -50,7 +50,7 @@ class BusController extends Controller
     public function update(Request $request, Bus $bus)
     {
         $request->validate([
-            'bus_number' => 'required|unique:buses,bus_number,' . $id,
+            'bus_number' => 'required|unique:buses,bus_number,' . $bus->id,
             'model' => 'required',
             'capacity' => 'required|integer',
             'type' => 'required|in:AC,Non-AC,Luxury',
