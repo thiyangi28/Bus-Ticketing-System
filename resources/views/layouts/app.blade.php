@@ -20,9 +20,10 @@
             <span class="text-2xl font-bold tracking-tight">🚌 BusTicketing</span>
         </div>
         <div class="flex gap-6 font-medium">
-            <a href="{{ route('buses.index') }}" class="hover:text-indigo-200 transition-colors">Buses</a>
-            <a href="#" class="hover:text-indigo-200 transition-colors">Routes</a>
-            <a href="#" class="hover:text-indigo-200 transition-colors">Schedules</a>
+            <a href="{{ route('buses.index') }}" class="{{ request()->routeIs('buses.*') ? 'text-indigo-200 font-bold border-b-2 border-indigo-200 pb-1' : 'hover:text-indigo-200 transition-colors' }}">Buses</a>
+            <a href="{{ route('routes.index') }}" class="{{ request()->routeIs('routes.*') ? 'text-indigo-200 font-bold border-b-2 border-indigo-200 pb-1' : 'hover:text-indigo-200 transition-colors' }}">Routes</a>
+            <a href="{{ route('schedules.index') }}" class="{{ request()->routeIs('schedules.*') ? 'text-indigo-200 font-bold border-b-2 border-indigo-200 pb-1' : 'hover:text-indigo-200 transition-colors' }}">Schedules</a>
+            <a href="{{ route('bookings.index') }}" class="{{ request()->routeIs('bookings.*') ? 'text-indigo-200 font-bold border-b-2 border-indigo-200 pb-1' : 'hover:text-indigo-200 transition-colors' }}">Bookings</a>
         </div>
     </nav>
 
